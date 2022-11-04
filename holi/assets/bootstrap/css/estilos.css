@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+.modal-content {  
+    width: 700px !important;
+}
+
+/*.navbar{
+    height: 60px ;
+    padding-right: 10PX;
+    background-color: hsl(326, 38%, 21%) !important; 
+    background-color: #DF374B;
+    font-size: 17px  !important; 
+} 
+ titulo_ tienda */
+
+.navbar-brand{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.nav-link{
+    color: #ffffff !important;
+    font-size: 15px;
+} 
+.nav-link active {
+    color: #6900E0  ;
+}
+.cursor:hover{
+    cursor: pointer;
+}
+/* banners */
+.carousel-caption {
+    color: #dddddd  ;
+    background-color: hsl(0, 0%, 7%);
+    opacity:0.75 !important; 
+}
