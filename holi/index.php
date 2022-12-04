@@ -101,6 +101,7 @@
                                             <p class="card-text">DNI:</p>
                                             <p class="card-text">Dirección:</p>
                                             <p class="card-text">Celular:</p>
+                                            <p class="card-text">Imagen:</p>
                                         </div>
                                         <div class="col-6">
                                             <p class="card-text" id="r-nombre"></p>
@@ -108,6 +109,9 @@
                                             <p class="card-text" id="r-dni"></p>
                                             <p class="card-text" id="r-direccion"></p>
                                             <p class="card-text" id="r-celular"></p>
+                                            <input type="file" class="form-control" name="userimagen" id="r-userimagen">
+                                            <input type="hidden" name="imagenuseractual" id="userimagenactual" value="">
+                                            <img src="../files/usuarios/1667651600.png" width="150px" height="120px" id="userimagenmuestra" style="">
                                         </div>
                                     </div>
                                 </div>
