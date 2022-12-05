@@ -52,7 +52,7 @@
                                     <th>Nombre</th> 
                                     <th>Descripción</th>  
                                     <th>Imagen</th>
-                                    <th>Tipo de Calzado</th>
+                                    <th>Categoría</th>
                                     <th>Proveedor</th>
                                     <th>Acciones</th>
                                     </tr>
