@@ -108,7 +108,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label for="" class="col-form-label">Tipo de Calzado:</label>
+                                <label for="" class="col-form-label">Categoría:</label>
                                 <select id="idTipoCalzado" class="form-control">
                                     <option value="0">Seleccione</option>
                                 </select>
