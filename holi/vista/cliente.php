@@ -53,6 +53,7 @@
                                 <th>A. paterno</th>                                
                                 <th>A. materno</th>  
                                 <th>Rol</th>
+                                <th>Acciones</th>
                                 <!-- <th>DNI</th>
                                 <th>Fec. Nac</th> -->
                             
