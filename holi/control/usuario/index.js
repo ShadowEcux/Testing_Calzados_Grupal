@@ -7,7 +7,6 @@ $(document).ready(function() {
         url: './modelo/calzado.php',
         data: {opcion: 6},
         success:(data)=>{
-            console.log(data);
             calzados = JSON.parse(data);
             console.log(calzados);
             textHTML = ""; 
@@ -26,6 +25,7 @@ $(document).ready(function() {
         }
     })
     listarCarrito();
+    listarHistorial();
 });
 
 function comprar(id){
@@ -165,6 +165,36 @@ function listarCarrito(){
     document.getElementById("carrito").innerHTML = textHTML; 
 }
 
+function listarHistorial(){
+
+    $.ajax({
+        type: 'POST',
+        url: './modelo/usuario/usuario.php',
+        data: {opcion: 'listar-historial'},
+        success:(dataCalzado) => {
+            data = JSON.parse(dataCalzado);
+            console.log('⚡ ~ listarHistorial ~ data', data);
+
+            var textHTML = "";
+            data.forEach(c => {
+                textHTML +=
+                "<tr>" +
+                    "<td>" + c.fecha + "</td>" +
+                    "<td>" + c.nombre + "</td>" +
+                    "<td>" + c.cantidad + "</td>" +
+                    "<td>" + c.color + "</td>" +
+                    "<td>" + c.Total + "</td>" +
+                    "<td colspan='2'>" +
+                        "<img class='mr-2' src='" + c.imagen + "' width='50' height='50'>"
+                    "</td>" +
+                "</tr>"
+            });
+            document.getElementById("historial-table-detalle").innerHTML = textHTML; 
+
+        }
+    })
+}
+
 function vaciarCarrito(){
     localStorage.removeItem("carrito");
     listarCarrito();
@@ -192,6 +222,7 @@ function guardarCambios(){
         DNI: $("#f-dni")[0].value,
         direccion: $("#f-direccion")[0].value,
         celular: $("#f-celular")[0].value,
+        photo: $("#f-photo")[0].value,
         opcion: 'actualizar-datos-propios'
     }
     console.log(usuario);
@@ -213,18 +244,20 @@ function listarDatosPropios(){
         data: {opcion: 'listar-datos-propios'},
         success:(usuarioData)=>{
             usuarioData = JSON.parse(usuarioData)[0];
-            $("#f-nombre")[0].value = usuarioData.nombre,
-            $("#f-apellidoP")[0].value = usuarioData.apellidoP,
-            $("#f-apellidoM")[0].value = usuarioData.apellidoM,
-            $("#f-dni")[0].value = usuarioData.DNI,
-            $("#f-direccion")[0].value = usuarioData.direccion,
-            $("#f-celular")[0].value = usuarioData.celular
+            $("#f-nombre")[0].value = usuarioData.nombre;
+            $("#f-apellidoP")[0].value = usuarioData.apellidoP;
+            $("#f-apellidoM")[0].value = usuarioData.apellidoM;
+            $("#f-dni")[0].value = usuarioData.DNI;
+            $("#f-direccion")[0].value = usuarioData.direccion;
+            $("#f-celular")[0].value = usuarioData.celular;
+            $("#f-photo")[0].value = usuarioData.photo;
 
             $("#r-nombre")[0].innerHTML = usuarioData.nombre,
             $("#r-apellidos")[0].innerHTML = usuarioData.apellidoP + " " + usuarioData.apellidoM,
             $("#r-dni")[0].innerHTML = usuarioData.DNI,
             $("#r-direccion")[0].innerHTML = usuarioData.direccion,
             $("#r-celular")[0].innerHTML = usuarioData.celular
+            $("#r-photo").attr('src', `${usuarioData.photo}`);
         }
     })
 }
