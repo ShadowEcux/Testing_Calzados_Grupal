@@ -37,26 +37,30 @@
     </div>    
     <br>  
  
-    <div class="container ">
-    <div class="row">
-            <div class="col-lg-12">
-                    
-                <table id="tablaUsuarios" class="table table-hover table-bordered " style="width:100%" >
-                    <thead class="text-center">
-                        <tr>
-                            <th>Codigo</th> 
-                            <th>Nombre</th>  
-                          
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>                           
-                    </tbody>        
-                </table>               
-          
-            </div>
-        </div>  
-    </div>   
+    <div class="row fila-menu">
+        <div class="col-lg-2 col-md-3">
+            <?php include_once '../include/menu.php' ?>
+        </div>
+        <div class="col-lg-10 col-md-9">
+            <div class="row">
+                <div class="col-lg-12">
+                            
+                    <table id="tablaUsuarios" class="table table-hover table-bordered " style="width:100%" >
+                        <thead class="text-center">
+                            <tr>
+                                <th>Codigo</th> 
+                                <th>Nombre</th> 
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>                           
+                        </tbody>        
+                    </table>               
+            
+                </div>
+            </div>  
+        </div>
+    </div>  
  
 <!--Modal para CRUD-->
 <div class="modal fade" id="modalCRUD"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

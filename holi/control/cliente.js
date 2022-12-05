@@ -17,6 +17,7 @@ $(document).ready(function() {
             { data: 'apellidoP' },
             { data: 'apellidoM' },
             { data: 'rol' },
+            {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnEditar'><i class='material-icons'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar'><i class='material-icons'>delete_sweep</i></button></div></div>"}
         ]
     });
 
