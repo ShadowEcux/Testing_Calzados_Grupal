@@ -9,6 +9,7 @@
     <a href="./calzado.php" class="list-group-item list-group-item-action">Calzados</a>
     <a href="./proveedor.php" class="list-group-item list-group-item-action">Proveedores</a>
     <a href="./cliente.php" class="list-group-item list-group-item-action">Clientes</a>
+    <a href="./cliente.php" class="list-group-item list-group-item-action">Categorias</a>
   </div>
 <?php
   }
