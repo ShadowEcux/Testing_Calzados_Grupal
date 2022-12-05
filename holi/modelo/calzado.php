@@ -3,7 +3,7 @@
     include_once './conexion.php';
     $objeto = new Conexion();
     $conexion = $objeto->Conectar();
-
+    
     $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : '';
     $imagen = (isset($_POST['imagen'])) ? $_POST['imagen'] : '';
@@ -14,6 +14,7 @@
     $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
     $idCalzado = (isset($_POST['idCalzado'])) ? $_POST['idCalzado'] : '';
 
+    $idUsuario = (isset($_SESSION['idUsuario'])) ? $_SESSION['idUsuario'] : '';
 
     switch($opcion){
         case 1:
@@ -21,6 +22,7 @@
                          VALUES('$nombre', '$descripcion', '$idTipoCalzado' , '$idProveedor') ";			
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();     
+
             break;    
         case 2:        
             $consulta = "UPDATE calzado 

@@ -34,3 +34,7 @@
     background-color: hsl(0, 0%, 7%);
     opacity:0.75 !important; 
 }
+
+.profile-img {
+    width: 200px;
+}

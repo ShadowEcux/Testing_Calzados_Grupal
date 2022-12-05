@@ -79,6 +79,7 @@
             <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-shopping-cart"></i> CARRITO </a>
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"> <i class="far fa-newspaper"></i>TERMINOS Y CONDICIONES</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"><i class="fas fa-users"></i> SOBRE NOSOTROS</a>
+            <a class="list-group-item list-group-item-action" id="tabla-historial-item" data-toggle="list" href="#tabla-historial" role="tab" aria-controls="historial"> <i class="far fa-newspaper"></i>HISTORIAL COMPRAS</a>
           </div>
         </div>
         <div class="col-9"> 
@@ -101,6 +102,7 @@
                                             <p class="card-text">DNI:</p>
                                             <p class="card-text">Dirección:</p>
                                             <p class="card-text">Celular:</p>
+                                            <p class="card-text">Foto:</p>
                                         </div>
                                         <div class="col-6">
                                             <p class="card-text" id="r-nombre"></p>
@@ -108,6 +110,7 @@
                                             <p class="card-text" id="r-dni"></p>
                                             <p class="card-text" id="r-direccion"></p>
                                             <p class="card-text" id="r-celular"></p>
+                                            <img class="profile-img" alt="" id="r-photo" />
                                         </div>
                                     </div>
                                 </div>
@@ -115,8 +118,10 @@
 <!-- USUARIO - DETALLES: seguir comprando -->
              </div>
             <div class="tab-pane fade show active" id="list-productos" role="tabpanel" aria-labelledby="list-productos-list">
-              <div class="row row-cols-3" id="lista-productos">
-              </div>
+
+                <div class="row row-cols-3" id="lista-productos">
+
+                </div>
             
             </div>
             <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
@@ -252,8 +257,44 @@ Los precios indicados en nuestra Web incluyen IVA.
               
             </div>
             
+            <div 
+              class="tab-pane fade show" 
+              id="tabla-historial" 
+              role="tabpanel" 
+              aria-labelledby="tabla-historial-item"
+            >
+                <div class="row row-cols-3" id="tabla-compras">
+                  <div class="row fila-menu">
+                      <div class="col-lg-10 col-md-9">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <table id="tabla-historial-tb" class="table table-hover table-bordered " style="width:100%" >
+                                      <thead class="text-center">
+                                          <tr>
+                                              <th>Fecha</th> 
+                                              <th>Nombre</th> 
+                                              <th>Cantidad</th>
+                                              <th>Color</th>
+                                              <th>Total</th>
+                                              <th>Imagen</th>  
+                                          </tr>
+                                      </thead>
+                                      <tbody id="historial-table-detalle">
+    
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>  
+                      </div>
+                  </div>  
+    
+    
+                </div>
+    
+            </div>
           </div>
         </div>
+        
       
     </main>
 <!--PIE DE PAGINA o FOOTER-->
@@ -352,6 +393,12 @@ Los precios indicados en nuestra Web incluyen IVA.
             </div>
           </div>
         
+          <div class="col-6">
+            <div class="form-group">
+              <div class="form-label">Foto</div>
+              <input type="text" class="form-control" id="f-photo">
+            </div>
+          </div>
         
         </div>
       </div>
@@ -404,3 +451,5 @@ Los precios indicados en nuestra Web incluyen IVA.
   </div>
 </div>
 <!-- Modal -->
+
+

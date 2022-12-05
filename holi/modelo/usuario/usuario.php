@@ -13,6 +13,7 @@
     $DNI = (isset($_POST['DNI'])) ? $_POST['DNI'] : '';
     $direccion = (isset($_POST['direccion'])) ? $_POST['direccion'] : '';
     $celular = (isset($_POST['celular'])) ? $_POST['celular'] : '';
+    $photo = (isset($_POST['photo'])) ? $_POST['photo'] : '';
 
     $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
     $password1 = 'ea221f08a9a16bb630d468f0ce045c05';
@@ -51,7 +52,7 @@
             }*/
         break;
         case 'listar-datos-propios':
-            $consulta = "SELECT nombre, apellidoP, apellidoM, DNI, direccion, celular
+            $consulta = "SELECT nombre, apellidoP, apellidoM, DNI, direccion, celular, photo
                          FROM usuario WHERE idUsuario = $idUsuario";
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
@@ -60,7 +61,7 @@
         break;
         case 'actualizar-datos-propios':
             $consulta = "UPDATE usuario SET nombre = '$nombre', apellidoP = '$apellidoP', apellidoM = '$apellidoM',
-                         DNI = '$DNI', direccion = '$direccion', celular= '$celular'
+                         DNI = '$DNI', direccion = '$direccion', celular= '$celular', photo = '$photo'
                          WHERE idUsuario = '$idUsuario'";
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
@@ -72,6 +73,19 @@
             $consulta = "call SP_actualizar_password('$idUsuario', '$current_password', '$new_password');";
             $resultado = $conexion->prepare($consulta);
             $resultado->execute();
+            $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+        break;
+
+        case 'listar-historial':
+            $consulta = "SELECT v.fecha, v.idCliente, c.nombre, c.imagen,d.cantidad, d.Total, dc.color, dc.stock from venta v
+            INNER JOIN detalle_venta d on d.idVenta = v.idVenta
+            INNER JOIN detallecalzado dc ON dc.idDetallaCalzado = d.idDetallaCalzado
+            INNER JOIN calzado c ON c.idCalzado = dc.idCalzado WHERE v.idCliente = $idUsuario";
+            // $consulta = "SELECT nombre, apellidoP, apellidoM, DNI, direccion, celular, photo
+            //              FROM usuario WHERE idUsuario = $idUsuario";
+            $resultado = $conexion->prepare($consulta);
+            $resultado->execute();
+            
             $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     }
