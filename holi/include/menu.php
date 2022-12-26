@@ -10,6 +10,7 @@
     <a href="./proveedor.php" class="list-group-item list-group-item-action">Proveedores</a>
     <a href="./cliente.php" class="list-group-item list-group-item-action">Clientes</a>
     <a href="./tipoCalzado.php" class="list-group-item list-group-item-action">Categoría</a>
+    <a href="./admin.php" class="list-group-item list-group-item-action">Administradores</a>
   </div>
 <?php
   }
