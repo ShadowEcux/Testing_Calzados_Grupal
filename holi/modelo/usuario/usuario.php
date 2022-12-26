@@ -18,6 +18,9 @@
     $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
     $password1 = 'ea221f08a9a16bb630d468f0ce045c05';
     if(isset($password)) $password = md5($password);
+    // if(isset($password)) $password = $password1;
+    // print($password)
+    // echo($password);
     session_cache_expire(36000);
     session_start();
     $idUsuario = (isset($_SESSION['idUsuario'])) ? $_SESSION['idUsuario'] : '';
@@ -52,10 +55,11 @@
             }*/
         break;
         case 'listar-datos-propios':
+            $idCliente = (isset($idUsuario)) ? $idUsuario : 1;
             $consulta = "SELECT nombre, apellidoP, apellidoM, DNI, direccion, celular, photo
-                         FROM usuario WHERE idUsuario = $idUsuario";
+                         FROM usuario WHERE idUsuario = ?";
             $resultado = $conexion->prepare($consulta);
-            $resultado->execute();
+            $resultado->execute(array($idCliente));
             
             $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
@@ -77,15 +81,16 @@
         break;
 
         case 'listar-historial':
+            $idCliente = (isset($idUsuario)) ? $idUsuario : 1;
             $consulta = "SELECT v.fecha, v.idCliente, c.nombre, c.imagen,d.cantidad, d.Total, dc.color, dc.stock from venta v
             INNER JOIN detalle_venta d on d.idVenta = v.idVenta
             INNER JOIN detallecalzado dc ON dc.idDetallaCalzado = d.idDetallaCalzado
-            INNER JOIN calzado c ON c.idCalzado = dc.idCalzado WHERE v.idCliente = $idUsuario";
-            // $consulta = "SELECT nombre, apellidoP, apellidoM, DNI, direccion, celular, photo
-            //              FROM usuario WHERE idUsuario = $idUsuario";
+            INNER JOIN calzado c ON c.idCalzado = dc.idCalzado WHERE v.idCliente = ?";
+            // $consulta = "SELECT nombre, apellidoP, apellidoM FROM usuario WHERE idUsuario = $idUsuario";
+            $conexion->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+
             $resultado = $conexion->prepare($consulta);
-            $resultado->execute();
-            
+            $resultado->execute(array($idCliente));
             $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     }

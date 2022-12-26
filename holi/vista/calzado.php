@@ -42,7 +42,7 @@
         <div class="col-lg-2 col-md-3">
             <?php include_once '../include/menu.php' ?>
         </div>
-                <div class="col-lg-10 col-md-9">
+                <div class="col-lg-10 col-md-9 calzado-table">
                     <div class="row">
                         <div class="col-lg-12">
                             <table id="tabla" class="table table-hover table-bordered " style="width:100%" >
