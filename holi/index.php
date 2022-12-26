@@ -296,11 +296,18 @@ Los precios indicados en nuestra Web incluyen IVA.
         </div>
         
       
+
+    <div>
+      <h2>Mapa del local</h2>
+      <!-- <div id="map" style="height:300px; width: 400px; background: red"></div> -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1949.7558907451873!2d-76.93379924766306!3d-12.21358756028224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9c2f03d0c0b%3A0xfca86ac13e7a5900!2sCalzados%20Star!5e0!3m2!1ses-419!2spe!4v1672086476659!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
     </main>
 <!--PIE DE PAGINA o FOOTER-->
     <br><br><br><br><br><br><br>
     <?php include_once 'include/footer.php' ?>
-
     <script src="./assets/jquery/jquery-3.3.1.min.js"></script> 
     <script type="text/javascript" src="./control/usuario/index.js"></script> 
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>     
@@ -451,5 +458,3 @@ Los precios indicados en nuestra Web incluyen IVA.
   </div>
 </div>
 <!-- Modal -->
-
-

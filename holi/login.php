@@ -19,9 +19,9 @@
                 <!-- tabla de inicio de sesión -->
                 <div class="style_table" ><!-- para guia-->
                   <div class="title_LogIn">Iniciar sesión</div>
-                  <div><input class="style_table_input" type="text" class="form-control" id="usuario" placeholder="Username"></div>
-                  <div><input class="style_table_input" type="password" class="form-control" id="password" placeholder="Password"></div>
-                  <div><button class="style_table_btn" onclick="login();">Iniciar</button></div>
+                  <div><input class="style_table_input user-input" type="text" class="form-control" id="usuario" placeholder="Username"></div>
+                  <div><input class="style_table_input password-input" type="password" class="form-control" id="password" placeholder="Password"></div>
+                  <div><button class="style_table_btn login-btn" onclick="login();">Iniciar</button></div>
                   <div class="style_table_text">¿No estás registrado? <a class="a_link_table" href="./registrar.php">Regístrate</a></div>
                 </div>
 <!--
@@ -33,14 +33,14 @@
                         <label class="style_login_label">Contraseña</label>
                         <input class="style_login_input" type="password" class="form-control" id="password">
                     </div>            
--->      
+-->
         </div>
-   
+
 
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="./control/login.js"></script> 
-    <script type="text/javascript" src="./control/cliente.js"></script>  
+    <!-- <script type="text/javascript" src="./control/cliente.js"></script>   -->
   </body>
 </html>

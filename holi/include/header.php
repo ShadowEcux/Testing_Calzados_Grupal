@@ -19,7 +19,7 @@
             </li> 
           <?php 
           } else { ?>
-            <a class="nav-link pl-4 pr-4" href="./login.php">Iniciar Sesión</a>
+            <a class="nav-link pl-4 pr-4 login-btn" href="./login.php">Iniciar Sesión</a>
             </li> 
             <li class="nav-item">
               <a class="nav-link pl-4 pr-4" href="./registrar.php">Regístrate</a>

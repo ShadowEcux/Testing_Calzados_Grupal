@@ -7,6 +7,7 @@ $(document).ready(function() {
         url: './modelo/calzado.php',
         data: {opcion: 6},
         success:(data)=>{
+            console.log('data', data);
             calzados = JSON.parse(data);
             console.log(calzados);
             textHTML = ""; 
@@ -145,7 +146,7 @@ function listarCarrito(){
     let carrito = localStorage.getItem("carrito");
     let dataCarrito = [];
     if(carrito) dataCarrito = JSON.parse(carrito);
-    console.log(dataCarrito);
+    console.log('--', dataCarrito);
     textHTML = ""; 
     dataCarrito.forEach(c => {
         textHTML +=
@@ -162,6 +163,7 @@ function listarCarrito(){
             "<td onclick='eliminar(" + c.idDetallaCalzado + ")'><i class='fas fa-trash-alt pointer'></i></td>" +
         "</tr>"
     });
+    console.log('⚡ ~ listarCarrito ~ textHTML', textHTML);
     document.getElementById("carrito").innerHTML = textHTML; 
 }
 
@@ -244,20 +246,22 @@ function listarDatosPropios(){
         data: {opcion: 'listar-datos-propios'},
         success:(usuarioData)=>{
             usuarioData = JSON.parse(usuarioData)[0];
-            $("#f-nombre")[0].value = usuarioData.nombre;
-            $("#f-apellidoP")[0].value = usuarioData.apellidoP;
-            $("#f-apellidoM")[0].value = usuarioData.apellidoM;
-            $("#f-dni")[0].value = usuarioData.DNI;
-            $("#f-direccion")[0].value = usuarioData.direccion;
-            $("#f-celular")[0].value = usuarioData.celular;
-            $("#f-photo")[0].value = usuarioData.photo;
-
-            $("#r-nombre")[0].innerHTML = usuarioData.nombre,
-            $("#r-apellidos")[0].innerHTML = usuarioData.apellidoP + " " + usuarioData.apellidoM,
-            $("#r-dni")[0].innerHTML = usuarioData.DNI,
-            $("#r-direccion")[0].innerHTML = usuarioData.direccion,
-            $("#r-celular")[0].innerHTML = usuarioData.celular
-            $("#r-photo").attr('src', `${usuarioData.photo}`);
+            if (usuarioData) {
+                $("#f-nombre")[0].value = usuarioData.nombre;
+                $("#f-apellidoP")[0].value = usuarioData.apellidoP;
+                $("#f-apellidoM")[0].value = usuarioData.apellidoM;
+                $("#f-dni")[0].value = usuarioData.DNI;
+                $("#f-direccion")[0].value = usuarioData.direccion;
+                $("#f-celular")[0].value = usuarioData.celular;
+                $("#f-photo")[0].value = usuarioData.photo;
+    
+                $("#r-nombre")[0].innerHTML = usuarioData.nombre,
+                $("#r-apellidos")[0].innerHTML = usuarioData.apellidoP + " " + usuarioData.apellidoM,
+                $("#r-dni")[0].innerHTML = usuarioData.DNI,
+                $("#r-direccion")[0].innerHTML = usuarioData.direccion,
+                $("#r-celular")[0].innerHTML = usuarioData.celular
+                $("#r-photo").attr('src', `${usuarioData.photo}`);
+            }
         }
     })
 }
